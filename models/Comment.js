@@ -1,3 +1,5 @@
+// TODO: reconfigure for tasks
+
 const mongoose = require("mongoose");
 
 const CommentSchema = new mongoose.Schema({
