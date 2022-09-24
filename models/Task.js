@@ -5,10 +5,6 @@ const TaskSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  createdBy: {
-    type: String,
-    ref: "User"
-  },
   createdById: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"

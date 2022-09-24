@@ -1,4 +1,5 @@
 <%- include('partials/header') -%>
+
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
@@ -9,24 +10,17 @@
           <p></p>
 
 
-
-
           Let's 
-          <div class="btn-group">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              be mindful
-            </button>
-            <ul class="dropdown-menu">
-              <li>journal</li>
-              <li>meditate</li>      
-              <li>stretch</li>
-            </ul>
-            for 5 minutes.
+            <select name="selectedTask" id="selected-tasks">
+              <% for(var i=0; i<tasks.length; i++) {%>
+              <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
+              <% } %>
+            </select>
+          for 5 minutes.
           </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <%- include('partials/footer') -%>
