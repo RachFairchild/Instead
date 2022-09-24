@@ -1,14 +1,8 @@
-// TODO: reconfigure for journal entries
-
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-  caption: {
+const JournalSchema = new mongoose.Schema({
+  entry: {
     type: String,
-    required: true,
-  },
-  likes: {
-    type: Number,
     required: true,
   },
   user: {
@@ -21,4 +15,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Journal", JournalSchema);
