@@ -1,3 +1,4 @@
+const { Int32 } = require("mongodb");
 const mongoose = require("mongoose");
 
 const InstanceSchema = new mongoose.Schema({  
@@ -9,8 +10,9 @@ const InstanceSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  //TODO: add time updates/ "endTime" (see mongoose's timestamps option)
-  
+  minutes: {
+    type: Number,
+  },
   task: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Task"

@@ -13,7 +13,8 @@ module.exports = {
 
       const instance = new Instance({
         createdById: req.user._id,
-        task: req.query.selectedTask,
+        task: req.body.selectedTask,
+        minutes: req.body.minutes,
       });
 
       instance.save((err) => {

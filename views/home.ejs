@@ -9,7 +9,7 @@
           </div>
           <br><br>
 
-          <form action="/timer" method="GET">
+          <form action="/timer" method="POST">
           Let's 
             <select name="selectedTask" id="selected-tasks">
               <% for(var i=0; i<tasks.length; i++) {%>
@@ -19,7 +19,7 @@
           for 
             <span class="form-example">
               <label for="minutes"></label>
-              <input type="number" name="minutes" id="name" value="5" max="180" required>
+              <input type="number" name="minutes" id="minutes" value="5" max="180" required>
             </span>
           minutes.
           <br><br>
