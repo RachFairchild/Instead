@@ -9,15 +9,25 @@
           </div>
           <p></p>
 
-
+          <form>
           Let's 
             <select name="selectedTask" id="selected-tasks">
               <% for(var i=0; i<tasks.length; i++) {%>
               <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
               <% } %>
             </select>
-          for 5 minutes.
-          </div>
+          for   
+            <span class="form-example">
+              <label for="minutes"></label>
+              <input type="number" name="name" id="name" value="5" required>
+            </span>
+          minutes.
+            <div class="form-buttom">
+              <input type="submit" value="Okay!">
+            </div>
+          </form>
+
+        </div>
       </div>
     </div>
   </div>
