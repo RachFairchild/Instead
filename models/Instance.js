@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const InstanceSchema = new mongoose.Schema({  
-  createdBy: {
-    type: String,
-    ref: "User"
-  },
   createdById: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
@@ -19,6 +15,10 @@ const InstanceSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Task"
   },
+}, {
+  timestamps: true
 });
+
+
 
 module.exports = mongoose.model("Instance", InstanceSchema);
