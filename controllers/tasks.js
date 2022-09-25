@@ -16,19 +16,33 @@ module.exports = {
       console.log(err);
     }
   },
+
+
+
+
+
   getTasks: async (req, res) => {
     try {
-      const task = await Task.findById(req.params.id);
+      const tasks = await Task.find({ createdById: req.user.id, deleted: false });
+      //console.log(tasks)
       // const comments = await Comment.find({ post: req.params.id }).sort({ createdAt: "asc" }).lean();
-      res.render("home.ejs", { tasks: task, user: req.user });
+      res.render("taskupdate.ejs", { user: req.user, tasks: tasks });
     } catch (err) {
      console.log(err);
     }
   },
+
+
+
+
+
   deleteTasks: async (req, res) => {
+    console.log('in deleteTasks');
+    console.log(req);
     try {
-      await Task.deleteOne({_id: req.params.taskid});
-      res.redirect("/home/"+req.params.id);
+      await Task.updateOne({_id: req.params.id}, { deleted: true });
+
+      res.redirect("/taskupdate/");
     } catch(err) {
       console.log(err);
     }

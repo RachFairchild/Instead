@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+
+    <h1>Tasks</h1>
+    <ul>
+    <% tasks.forEach( el => { %>
+            <li class='taskItem' data-id='<%=el._id%>'>
+                <span><%= el.task %></span>
+                <span class='del'>
+                    <form
+                    action="/deleteTask/<%= el.id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+                    >
+                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                  </form>
+                </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+
+    <!-- <form action="/todos/createTodo" method='POST'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="submit">
+    </form> -->
+
+
+<%- include('partials/footer') -%>
