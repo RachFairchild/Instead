@@ -13,5 +13,6 @@ router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
+router.post("/timer", timerController.postTimer);
 
 module.exports = router;
