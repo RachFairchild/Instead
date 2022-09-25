@@ -2,8 +2,8 @@ const Task = require("../models/Task");
 const Instance = require("../models/Instance");
 
 module.exports = {
-    getIndex: (req, res) => {
-      res.render("index.ejs");
+    initiateTimer: (req, res) => {
+      res.render("timer.ejs");
     },
     postTimer: async (req, res) => {
       try {
