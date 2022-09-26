@@ -1,6 +1,7 @@
 const Task = require("../models/Task");
 
 module.exports = {
+  
   createTask: async (req, res) => {
     // define new task document
     const task = new Task({
@@ -14,18 +15,11 @@ module.exports = {
         return (err);
         console.log(err);
       }
-      //  res.redirect("/home");
     });
-    
+    // send user back to updated tasks page
     try {
-      // const taskUser = await User.findById(req.user.id)
-      // await Task.create({
-      //   task: req.body.task,
-      //   createdById: req.user.id,
-      //   deleted: false
-      // });
-      console.log(res);
-      res.render("taskupdate.ejs", { tasks: task, user: req.user });
+      const tasks = await Task.find({ createdById: req.user.id, deleted: false });
+      res.render("taskupdate.ejs", { user: req.user, tasks: tasks });
     } catch (err) {
       console.log(err);
     }
