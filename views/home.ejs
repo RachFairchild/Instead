@@ -9,14 +9,12 @@
           </div>
           <br><br>
 
-          <% if(deletedTasks.length == 0){ %>
+          <% if(tasks.length > 0){ %>
             <form action="/timer" method="POST">
             Let's 
               <select name="selectedTask" id="selected-tasks">
                   <% for(var i=0; i<tasks.length; i++) {%>
-                    <% if (tasks[i].deleted == false) { %>
-                      <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
-                    <% } %>
+                    <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
                   <% } %>
               </select>
             for 

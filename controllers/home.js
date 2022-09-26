@@ -7,7 +7,7 @@ module.exports = {
   },
   getTaskForDropdown: async (req, res) => {
     try {
-      const tasks = await Task.find({ createdById: req.user.id });
+      const tasks = await Task.find({ createdById: req.user.id, deleted: false });
       const deletedTasks = await Task.find({ createdById: req.user.id, deleted: true });
       res.render("home.ejs", { tasks: tasks, deletedTasks: deletedTasks, user: req.user });
     } catch (err) {

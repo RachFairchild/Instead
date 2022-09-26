@@ -35,7 +35,7 @@ module.exports = {
     }
   },
 
-  // use this to plug into front end
+  // not actually using this one, I stuck most of the logic below into the home controller instead
   getDeletedTasks: async (req, res) => {
     try {
       const deletedTasks = await Task.find({ createdById: req.user.id, deleted: true });
