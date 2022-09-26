@@ -25,7 +25,6 @@ module.exports = {
     }
   },
 
-
   getTasks: async (req, res) => {
     try {
       const tasks = await Task.find({ createdById: req.user.id, deleted: false });
@@ -36,6 +35,15 @@ module.exports = {
     }
   },
 
+  // use this to plug into front end
+  getDeletedTasks: async (req, res) => {
+    try {
+      const deletedTasks = await Task.find({ createdById: req.user.id, deleted: true });
+      // res.render("taskupdate.ejs", { user: req.user, tasks: tasks });
+    } catch (err) {
+     console.log(err);
+    }
+  },
 
   deleteTasks: async (req, res) => {
     console.log('in deleteTasks');
