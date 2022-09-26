@@ -22,7 +22,7 @@ module.exports = {
           return next(err);
         }
         //  res.redirect("/home");
-        });
+      });
 
       console.log(req.query.selectedTask);
       try {

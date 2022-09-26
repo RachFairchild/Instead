@@ -2,15 +2,30 @@ const Task = require("../models/Task");
 
 module.exports = {
   createTask: async (req, res) => {
+    // define new task document
+    const task = new Task({
+      task: req.body.taskItem,
+      createdById: req.user.id,
+      deleted: false,
+    });
+    // save the task document
+    task.save((err) => {
+      if (err) {
+        return (err);
+        console.log(err);
+      }
+      //  res.redirect("/home");
+    });
+    
     try {
       // const taskUser = await User.findById(req.user.id)
-      await Task.create({
-        task: req.body.task,
-        createdById: req.user.id,
-        deleted: false
-      });
-      console.log("Task has been added!");
-      res.redirect("/taskupdate");
+      // await Task.create({
+      //   task: req.body.task,
+      //   createdById: req.user.id,
+      //   deleted: false
+      // });
+      console.log(res);
+      res.render("taskupdate.ejs", { tasks: task, user: req.user });
     } catch (err) {
       console.log(err);
     }
