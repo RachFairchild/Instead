@@ -39,7 +39,7 @@ module.exports = {
   getDeletedTasks: async (req, res) => {
     try {
       const deletedTasks = await Task.find({ createdById: req.user.id, deleted: true });
-      // res.render("taskupdate.ejs", { user: req.user, tasks: tasks });
+      res.send({ deletedTasks: deletedTasks });
     } catch (err) {
      console.log(err);
     }
