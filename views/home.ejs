@@ -13,7 +13,9 @@
           Let's 
             <select name="selectedTask" id="selected-tasks">
               <% for(var i=0; i<tasks.length; i++) {%>
-              <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
+                <% if (tasks[i].deleted == false) { %>
+                  <option value=<%= tasks[i]._id%>><%= tasks[i].task%></option>
+                <% } %>
               <% } %>
             </select>
           for 
