@@ -1,5 +1,6 @@
 <%- include('partials/header') -%>
 
+    <!-- list of tasks with the ability to delete -->
     <h1>Tasks</h1>
     <ul>
     <% tasks.forEach( el => { %>
@@ -18,11 +19,12 @@
     <% }) %>    
     </ul>
 
+    <!-- form for new task intake -->
 
-    <!-- <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+    <form action="/taskupdate" method='POST'>
+        <input type="text" placeholder="Enter task" name='taskItem'>
         <input type="submit">
-    </form> -->
+    </form>
 
 
 <%- include('partials/footer') -%>

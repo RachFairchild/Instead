@@ -19,9 +19,7 @@ router.post("/timer", instanceController.postTimer);
 
 // Task routes
 router.get("/taskupdate", ensureAuth, tasksController.getTasks);
+router.post("/taskupdate", ensureAuth, tasksController.createTask);
 router.delete("/deleteTask/:id", tasksController.deleteTasks);
-// router.post("/createPost", upload.single("file"), postsController.createPost);
-// router.put("/likePost/:id", postsController.likePost);
-// router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;
