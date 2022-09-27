@@ -14,6 +14,8 @@ router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
+
+// Timer routes
 router.get("/timer", instanceController.postTimer);
 router.post("/timer", instanceController.postTimer);
 
