@@ -29,6 +29,10 @@ module.exports = {
 
       try {
         //const tasks = await Task.find({ createdById: req.user.id });
+
+
+
+
         let milliseconds = (req.body.minutes * 60) * 1000;
         console.log(req.body.minutes);
         console.log(milliseconds);
@@ -40,3 +44,17 @@ module.exports = {
     },
 };
   
+
+
+// var timer = new Timer();
+// timer.start({ countdown: true, precision: 'seconds', startValues: { minutes: req.body.minutes }});
+
+// document.querySelector('#countdownExample .values').html(timer.getTimeValues().toString());
+
+// timer.addEventListener('secondsUpdated', function (e) {
+//   document.querySelector('#countdownExample .values').html(timer.getTimeValues().toString());
+// });
+
+// timer.addEventListener('targetAchieved', function (e) {
+//   document.querySelector('#countdownExample .values').html('Mindfulness achieved!');
+// });

@@ -9,21 +9,30 @@
           <input type="submit" value="You're done!">
         </form> -->
 
-        <span class="countdown font-mono text-2xl">
-          <span style="--value:10;"></span>:
-          <span style="--value:24;"></span>:
-          <span style="--value:43;"></span>
-        </span>
+      <div id="countdownExample">
+        <div class="values"></div>
+      </div>
 
         
     </div>
   </div>  
 <%- include('partials/footer') -%>
 
+<script src="lib/easytimer/dist/easytimer.min.js"></script>
 <script>
-  <span className="countdown font-mono text-2xl">
-    <span style={{"--value":10}}></span>h
-    <span style={{"--value":24}}></span>m
-    <span style={{"--value":7}}></span>s
-  </span>
+  var timerInstance = new easytimer.Timer();
+</script>
+
+<script defer>
+  var timer = new Timer();
+  timer.start({ countdown: true, precision: 'seconds', startValues: { minutes: minutes }});
+  
+  $('#countdownExample .values').html(timer.getTimeValues().toString());
+  
+  timer.addEventListener('secondsUpdated', function (e) {
+    $('#countdownExample .values').html(timer.getTimeValues().toString());
+  },
+  timer.addEventListener('targetAchieved', function (e) {
+    $('#countdownExample .values').html('Mindfulness achieved!');
+  }));
 </script>
