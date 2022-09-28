@@ -1,6 +1,8 @@
 const Task = require("../models/Task");
 const Instance = require("../models/Instance");
 const User = require("../models/User");
+var Timer = require("easytimer.js").Timer;
+var timerInstance = new Timer();
 
 module.exports = {
     initiateTimer: (req, res) => {
