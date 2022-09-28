@@ -25,7 +25,6 @@ module.exports = {
         }
         //  res.redirect("/home");
       });
-      console.log(req.query.selectedTask);
 
       try {
         //const tasks = await Task.find({ createdById: req.user.id });

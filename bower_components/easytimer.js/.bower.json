@@ -1,0 +1,42 @@
+{
+  "name": "easytimer.js",
+  "version": "4.5.4",
+  "authors": [
+    "Albert Gonzalez (albert.glez.mld@gmail.com)"
+  ],
+  "description": "Timer/Chronometer/Countdown compatible with AMD and NodeJS",
+  "main": "src/easytimer/easytimer.js",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "amd",
+    "requirejs",
+    "timer",
+    "chronometer",
+    "countdown",
+    "mocha"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/albert-gonzalez/easytimer.js",
+  "_release": "4.5.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.5.4",
+    "commit": "a839bbe97eed4ebb2ac9abdeb27bb4adfcfae8f6"
+  },
+  "_source": "https://github.com/albert-gonzalez/easytimer.js.git",
+  "_target": "^4.5.4",
+  "_originalSource": "easytimer.js",
+  "_direct": true
+}

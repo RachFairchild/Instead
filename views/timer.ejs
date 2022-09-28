@@ -1,8 +1,10 @@
+<script src="lib/easytimer/dist/easytimer.min.js"></script>
+
 <%- include('partials/header') -%>
   <div class="container">
     <div class="row justify-content-center mt-5">
         <span>
-          This page will show the timer counting down.
+          This page will show the timer counting down for <span><%= minutes %></span> minutes.
         </span>
 
         <!-- <form action="/home" method="GET" id="timerButton" style="display:none">
@@ -13,12 +15,16 @@
         <div class="values"></div>
       </div>
 
+
+      <div id="callbackExample">
+        <div class="values"></div>
+      </div>
+
         
     </div>
   </div>  
 <%- include('partials/footer') -%>
 
-<script src="lib/easytimer/dist/easytimer.min.js"></script>
 <script>
   var timerInstance = new easytimer.Timer();
 </script>
@@ -35,4 +41,11 @@
   timer.addEventListener('targetAchieved', function (e) {
     $('#countdownExample .values').html('Mindfulness achieved!');
   }));
+
+  // var timer = new Timer();
+  // timer.start({callback: function (timer) {
+  //     $('#callbackExample .values').html(
+  //         'Hello, I am a callback and I am counting time: ' + timer.getTimeValues().toString(['days', 'hours', 'minutes', 'seconds', 'secondTenths'])
+  //     );
+  // }});
 </script>
